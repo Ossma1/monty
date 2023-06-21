@@ -5,19 +5,20 @@
  * @counter: line_number
  * Return: no return
 */
-void f_push(stack_t **head, unsigned int counter)
+void f_push(stack_t **head, unsigned int counter ,bus_t **bus)
 {
-	int n, j = 0, flag = 0;
+	int n, a = 0;
 
-	if (bus.arg)
+	if (bus.arg != NULL)
 	{
 		if (bus.arg[0] == '-')
-			j++;
-		for (; bus.arg[j] != '\0'; j++)
+			a++;
+		for (; bus.arg[a] != '\0'; a++)
 		{
-			if (bus.arg[j] > 57 || bus.arg[j] < 48)
-				flag = 1; }
-		if (flag == 1)
+			if (bus.arg[a] > 57 || bus.arg[a] < 48)
+				break;
+	       	}
+		if (bus.arg[a] != '\0')
 		{ fprintf(stderr, "L%d: usage: push integer\n", counter);
 			fclose(bus.file);
 			free(bus.content);
