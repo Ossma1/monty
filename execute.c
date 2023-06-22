@@ -14,12 +14,13 @@ int execute(char *ligne, stack_t **stack, unsigned int counter, FILE *file)
     instruction_t opst[] = {
         {"push", f_push},
         {"pall", f_pall},
+	{"pint", f_pint},
+	{"pop", f_pop},
+	{"swap", f_swap},
+	{"add", f_add},
+	{"nop", f_nop},
         {NULL, NULL}};
-    char *operation = strtok(ligne, " \n\t");
-    if (operation != NULL && operation[0] == '#')
-    {
-	return (0);
-    }	
+    char *operation = strtok(ligne, " \n\t");	
     while (opst[j].opcode && operation)
     {
         if (strcmp(operation, opst[j].opcode) == 0)
