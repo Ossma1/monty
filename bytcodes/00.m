@@ -9,9 +9,12 @@ push 2
 pall
 
 
+##
 
 
+push  od
 
-push 7
+push 8
+
 pall
 
