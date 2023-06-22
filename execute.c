@@ -18,7 +18,7 @@ int execute(char *ligne, stack_t **stack, unsigned int counter, FILE *file)
     char *operation = strtok(ligne, " \n\t");
     ;
     
-    if (operation[0] == "#")
+    if (strncmp(operation, "#", 1) == 0)
     {
 	    return (0);
     }
