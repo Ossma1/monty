@@ -16,12 +16,10 @@ int execute(char *ligne, stack_t **stack, unsigned int counter, FILE *file)
         {"pall", f_pall},
         {NULL, NULL}};
     char *operation = strtok(ligne, " \n\t");
-    ;
-    
-    if (strncmp(operation, "#", 1) == 0)
+    if (operation != NULL && operation[0] == '#')
     {
-	    return (0);
-    }
+	return (0);
+    }	
     while (opst[j].opcode && operation)
     {
         if (strcmp(operation, opst[j].opcode) == 0)
