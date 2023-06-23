@@ -8,14 +8,14 @@
  */
 void f_pstr(stack_t **head, unsigned int counter)
 {
-    stack_t *current = *head;
+    stack_t *current;
 
     (void)counter;
-
-    while (current != NULL && current->n != 0 && current->n >= 0 && current->n <= 127)
+    current = *head;
+    while (current != NULL && current->n > 0 && current->n <= 127)
     {
-        putchar(current->n);
+        printf("%c", current->n);
         current = current->next;
     }
-    putchar('\n');
+    printf("\n");
 }
