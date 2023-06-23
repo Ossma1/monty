@@ -23,6 +23,7 @@ int execute(char *ligne, stack_t **stack, unsigned int counter, FILE *file)
 	{"div", f_div},
 	{"mul", f_mul},
 	{"mod", f_mod},
+	{"pchar", f_pchar},
 	{NULL, NULL}};
     char *operation = strtok(ligne, " \n\t");	
     while (opst[j].opcode && operation)
