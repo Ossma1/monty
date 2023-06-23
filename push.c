@@ -39,7 +39,8 @@ void f_push(stack_t **stack1, unsigned int som)
 		exit(EXIT_FAILURE);
 	}
 	n = atoi(arg);
-	if (bus.lifi == 0)
+	if (data_format == S)
 		addnode(stack1, n);
+	else
+		addqueue(stack1, n);
 }
-

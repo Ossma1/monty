@@ -34,9 +34,14 @@ typedef struct bus_s
 {
 	FILE *file;
 	char *content;
-	int lifi;
 }  bus_t;
 extern bus_t bus;
+typedef enum {
+    S,
+    Q
+} DataFormat;
+
+extern DataFormat data_format;
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -68,4 +73,10 @@ void f_div(stack_t **head, unsigned int counter);
 void f_mul(stack_t **head, unsigned int counter);
 void f_mod(stack_t **head, unsigned int counter);
 void f_pchar(stack_t **head, unsigned int counter);
+void addqueue(stack_t **head, int n);
+void f_pstr(stack_t **head, unsigned int counter);
+void f_rotl(stack_t **head, unsigned int counter);
+void f_rotr(stack_t **head, unsigned int counter);
+void f_queue(stack_t **head, unsigned int counter);
+void f_stack(stack_t **head, unsigned int counter);
 #endif

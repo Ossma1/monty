@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include "monty.h"
 
-bus_t bus = {NULL, NULL, 0};
+bus_t bus = {NULL, NULL};
+DataFormat data_format = S; 
 /**
  * main - monty code interpreter
  * @argc: number of arguments
@@ -43,3 +44,4 @@ int main(int argc, char *argv[])
     fclose(file);
 return (0);
 }
+
